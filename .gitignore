@@ -1,0 +1,32 @@
+# Compiled files
+/target
+
+# Cargo lock
+# Ignore for libraries, commit for applications
+Cargo.lock
+
+# Rust analyzer
+/.rustc_info.json
+
+# macOS
+.DS_Store
+
+# IntelliJ / RustRover
+.idea/
+
+# VS Code
+.vscode/
+
+# Android build outputs (if you generate them here)
+android-libs/
+
+# Generated JNI libraries
+*.so
+*.dylib
+*.dll
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
