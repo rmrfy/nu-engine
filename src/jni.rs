@@ -48,6 +48,33 @@ pub extern "system" fn Java_io_rmrfy_nu_NuEngine_selectionSort(
 }
 
 #[unsafe(no_mangle)]
+pub extern "system" fn Java_io_rmrfy_nu_NuEngine_mergeSort(
+    env: JNIEnv,
+    _class: JClass,
+    values: JIntArray,
+) -> jintArray {
+    sort_array(env, values, sort::merge_sort)
+}
+
+#[unsafe(no_mangle)]
+pub extern "system" fn Java_io_rmrfy_nu_NuEngine_quickSort(
+    env: JNIEnv,
+    _class: JClass,
+    values: JIntArray,
+) -> jintArray {
+    sort_array(env, values, sort::quick_sort)
+}
+
+#[unsafe(no_mangle)]
+pub extern "system" fn Java_io_rmrfy_nu_NuEngine_heapSort(
+    env: JNIEnv,
+    _class: JClass,
+    values: JIntArray,
+) -> jintArray {
+    sort_array(env, values, sort::heap_sort)
+}
+
+#[unsafe(no_mangle)]
 pub extern "system" fn Java_io_rmrfy_nu_NuEngine_add(
     _env: JNIEnv,
     _class: JClass,
