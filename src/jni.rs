@@ -39,15 +39,6 @@ pub extern "system" fn Java_io_rmrfy_nu_NuEngine_bubbleSort(
 }
 
 #[unsafe(no_mangle)]
-pub extern "system" fn Java_io_rmrfy_nu_NuEngine_insertionSort(
-    env: JNIEnv,
-    _class: JClass,
-    values: JIntArray,
-) -> jintArray {
-    sort_array(env, values, sort::insertion_sort)
-}
-
-#[unsafe(no_mangle)]
 pub extern "system" fn Java_io_rmrfy_nu_NuEngine_selectionSort(
     env: JNIEnv,
     _class: JClass,

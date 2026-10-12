@@ -13,18 +13,6 @@ pub fn bubble_sort(values: &mut [i32]) {
     }
 }
 
-pub fn insertion_sort(values: &mut [i32]) {
-    for index in 1..values.len() {
-        let value = values[index];
-        let mut position = index;
-        while position > 0 && values[position - 1] > value {
-            values[position] = values[position - 1];
-            position -= 1;
-        }
-        values[position] = value;
-    }
-}
-
 pub fn selection_sort(values: &mut [i32]) {
     for index in 0..values.len() {
         let mut minimum = index;
@@ -43,7 +31,7 @@ mod tests {
 
     #[test]
     fn algorithms_sort_integer_arrays() {
-        let algorithms: [fn(&mut [i32]); 3] = [bubble_sort, insertion_sort, selection_sort];
+        let algorithms: [fn(&mut [i32]); 2] = [bubble_sort, selection_sort];
         let cases = [
             vec![],
             vec![1],
