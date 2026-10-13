@@ -27,8 +27,6 @@ pub extern "system" fn Java_io_rmrfy_nu_NuEngine_subtract(
 
 // Java declarations: public static native int[] sortAscending(int[] values);
 //                    public static native int[] sortDescending(int[] values);
-//                    public static native int[] sortMerge(int[] values);
-//                    public static native int[] sortHeap(int[] values);
 #[unsafe(no_mangle)]
 pub extern "system" fn Java_io_rmrfy_nu_NuEngine_sortAscending(
     mut env: JNIEnv,
@@ -45,24 +43,6 @@ pub extern "system" fn Java_io_rmrfy_nu_NuEngine_sortDescending(
     values: JIntArray,
 ) -> jintArray {
     sort_array(&mut env, values, sort::descending)
-}
-
-#[unsafe(no_mangle)]
-pub extern "system" fn Java_io_rmrfy_nu_NuEngine_sortMerge(
-    mut env: JNIEnv,
-    _class: JClass,
-    values: JIntArray,
-) -> jintArray {
-    sort_array(&mut env, values, sort::merge_sort)
-}
-
-#[unsafe(no_mangle)]
-pub extern "system" fn Java_io_rmrfy_nu_NuEngine_sortHeap(
-    mut env: JNIEnv,
-    _class: JClass,
-    values: JIntArray,
-) -> jintArray {
-    sort_array(&mut env, values, sort::heap_sort)
 }
 
 // Copy the input so sorting does not modify the caller's array.
